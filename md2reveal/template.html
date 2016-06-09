@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>---title---</title>
+
+    <link rel="stylesheet" href="http://www.liriansu.com/static/css/reveal/reveal.css">
+    <link rel="stylesheet" href="http://www.liriansu.com/static/css/reveal/themes/---theme---.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="http://www.liriansu.com/static/css/reveal/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'http://www.liriansu.com/static/css/reveal/print-pdf.css' : 'http://www.liriansu.com/static/css/reveal/print-paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        ---section---
+      </div>
+    </div>
+
+    <script src="http://www.liriansu.com/static/js/reveal.head.min.js"></script>
+    <script src="http://www.liriansu.com/static/js/reveal.js"></script>
+
+    <script>
+      Reveal.initialize({
+        history: true,
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+        { src: 'http://www.liriansu.com/static/js/reveal-marked.js' },
+        { src: 'http://www.liriansu.com/static/js/reveal-markdown.js' },
+        { src: 'http://www.liriansu.com/static/js/reveal-notes.js', async: true },
+        { src: 'http://www.liriansu.com/static/js/reveal-highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>

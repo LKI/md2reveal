@@ -2,6 +2,7 @@
 
 from md import MD
 from os.path import basename, isfile, splitext
+from reveal import Reveal
 import argparse
 import sys
 
@@ -23,10 +24,12 @@ def execute(argv=None):
         print md, "is not a file."
         exit(1)
     else:
+        print "Generating"
         out = args.outfile or (basename(splitext(md)[0])+".html")
         m = MD(md)
-        for l in m.dump_reveal():
-            print l,
+        r = Reveal(md.dump_sections(), theme)
+        r.generate(out)
+        print "Finish, you can find it at [{}]".format(out)
 
 if __name__ == '__main__':
     execute(argv=['-h'])

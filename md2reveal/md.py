@@ -2,7 +2,7 @@ class MD:
     def __init__(self, filename):
         self.lines = open(filename, "r").readlines()
 
-    def dump_reveal(self):
+    def dump_sections(self):
         # Add section tag
         res = ['<section data-markdown>\n']
         for l in self.lines:
