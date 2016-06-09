@@ -2,23 +2,22 @@
 
 Markdown to [reveal.js](https://github.com/hakimel/reveal.js)
 
-## Welcome
+## You can go right
 
-This is h2
+or go down
 
-### Header three
+### 
 
-h3
+This is a chapter
 
-#### Header four
+#### 
 
-h4
+This is another chapter
 
-## Header two
+## Source code location
 
-h2
+Hosted on [GitHub](https://github.com/LKI/md2reveal)
 
-## Header three
+## Author
 
-fin
-
+[Lirian Su](https://github.com/LKI)
