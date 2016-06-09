@@ -14,4 +14,5 @@ setup(
         'console_scripts': ['md2reveal = md2reveal.cmdline:execute']
     },
     packages=['md2reveal'],
+    data_files=['template.html']
 )
