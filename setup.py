@@ -1,8 +1,6 @@
 from setuptools import setup
 import os.path
 
-datafiles = []
-
 setup(
     name='md2reveal',
     version='0.0.1',
@@ -16,5 +14,4 @@ setup(
         'console_scripts': ['md2reveal = md2reveal.cmdline:execute']
     },
     packages=['md2reveal'],
-    data_files=map(lambda (x): (os.path.dirname(x), [x]), datafiles),
 )

@@ -16,4 +16,8 @@ Use pip to install md2reveal.
 
     pip install md2reveal
 
-Then use `md2reveal hello.md`.
+Then you can use md2reveal command
+
+::
+
+    md2reveal hello.md

@@ -8,7 +8,7 @@ import sys
 
 def execute(argv=None):
     if argv is None:
-        argv = sys.argv[1:]
+        argv = sys.argv[1:] or ['-h']
     parser = argparse.ArgumentParser(description='convert markdown file to reveal.js html page')
     parser.add_argument('markdown_file', help='the markdown file')
     parser.add_argument('-t', '--theme', help='the reveal.js theme')
@@ -27,9 +27,10 @@ def execute(argv=None):
         print "Generating"
         out = args.outfile or (basename(splitext(md)[0])+".html")
         m = MD(md)
-        r = Reveal(md.dump_sections(), theme)
+        r = Reveal(m.dump_sections(), theme)
         r.generate(out)
         print "Finish, you can find it at [{}]".format(out)
 
 if __name__ == '__main__':
-    execute(argv=['-h'])
+    # For test
+    execute(argv=['hello.md'])
