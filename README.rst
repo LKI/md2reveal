@@ -2,11 +2,14 @@
 md2reveal
 =========
 
-This tool converts markdown to reveal.js
+This tool converts markdown to reveal.js.
+
+It will turn h1, h2 to reveal section,
+and h3 or greater to reveal vertical section.
 
 Source code is hosted on https://github.com/LKI/md2reveal
 
-You can view a quick demo at http://www.liriansu.com/md2reveal
+Try it!
 
 ============
 Installation

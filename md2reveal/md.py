@@ -2,9 +2,9 @@ class MD:
     def __init__(self, filename):
         self.lines = open(filename, "r").readlines()
 
-    def dump_sections(self):
+    def dump_sections(self, title):
         # Add section tag
-        res = ['<section data-markdown>\n']
+        res = ['<section>\n', '  <h1>{}</h1>\n'.format(title), '</section>\n', '<section data-markdown>\n']
         for l in self.lines:
             if self.head(l) > 0:
                 res += ['</section>\n', '<section data-markdown>\n']

@@ -6,5 +6,5 @@ class Reveal:
                 'r').read().replace("---theme---", theme).replace("---section---", str.join(
                     "        ", lines))
 
-    def generate(self, filename):
-        open(filename, "w").write(self.html.replace("---title---", basename(splitext(filename)[0])))
+    def generate(self, filename, title):
+        open(filename, "w").write(self.html.replace("---title---", title))
