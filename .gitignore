@@ -1,0 +1,12 @@
+*~
+*.swp
+*.log
+*.bak
+*.pyc
+*egg-info
+MANIFEST
+dist/
+build/
+
+# Windows
+Thumbs.db
