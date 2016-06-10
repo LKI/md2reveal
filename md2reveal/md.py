@@ -20,21 +20,22 @@ class MD:
                 i -= 1
 
         # Indent
-        indent, start = 0, -1
-        for i in range(0, len(res)):
+        indents, indent, start = [], 0, -1
+        for i in range(len(res)):
             head = self.head(res[i])
-            if head == 2 and indent <= 2:
-                indent = 2
-                start  = i-1
-            elif head > 2:
+            if (head == 1 and start > -1) or (head == 2 and indent > 2):
+                indents += [[start, i-1]]
+            if head >= 0:
                 indent = head
-                start  = start or (i-1)
-            elif head > 1 and start > -1:
-                res = res[:start] + ["<section>\n"] + res[start:i-1] + ["</section>\n"] + res[i-1:]
-                for j in range(start, i-1):
-                    res[j] = res[j] + "  "
+            if head == 1:
                 start = -1
-                indent = 0
+            elif head == 2 or (head == 3 and start == -1):
+                start = i-1
+
+        for i in reversed(indents):
+            for j in range(i[0], i[1]):
+                res[j] = "  " + res[j]
+            res = res[:i[0]] + ["<section>\n"] + res[i[0]:i[1]] + ["</section>\n"] + res[i[1]:]
         return res
 
     def head(self, line):
