@@ -1,4 +1,4 @@
-#!usr/bin/env python
+#!/usr/bin/env python
 
 from md import MD
 from os.path import basename, isfile, splitext

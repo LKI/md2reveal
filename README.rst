@@ -15,11 +15,18 @@ Try it!
 Installation
 ============
 
-Use pip to install md2reveal.
+Use pip to install md2reveal:
 
 ::
 
     pip install md2reveal
+
+Or install it directly by shell script:
+
+::
+
+    git clone https://github.com/LKI/md2reveal ~/.md2reveal
+    ~/.md2reveal/setup.sh /usr/bin/md2reveal
 
 Then you can use md2reveal command
 
