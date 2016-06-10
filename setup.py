@@ -5,7 +5,7 @@ import os.path
 
 setup(
     name='md2reveal',
-    version='1.0.2',
+    version='1.0.3',
     author='Lirian Su',
     author_email='liriansu@gmail.com',
     url='https://github.com/LKI/md2reveal',
@@ -16,5 +16,6 @@ setup(
         'console_scripts': ['md2reveal = md2reveal.cmdline:execute']
     },
     packages=['md2reveal'],
-    data_files=['template.html']
+    include_package_data=True,
+    package_data={'md2reveal' : ['template.html']}
 )
