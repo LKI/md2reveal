@@ -5,7 +5,7 @@ import os.path
 
 setup(
     name='md2reveal',
-    version='1.0.1',
+    version='1.0.2',
     author='Lirian Su',
     author_email='liriansu@gmail.com',
     url='https://github.com/LKI/md2reveal',
