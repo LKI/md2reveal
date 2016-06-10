@@ -1,6 +1,29 @@
 class MD:
+    qr = []
+
     def __init__(self, filename):
         self.lines = open(filename, "r").readlines()
+
+    def set_qr_url(self, url):
+        if 'http' == url[:4]:
+            url = '"' + url + '"'
+        self.qr = [
+            '<section>\n',
+            '  <h1>Thank you</h1>\n',
+            '  <p>You can find this slide at <div id="qr-url">-</div> or scan this QR code</p>\n',
+            '  <canvas id="qr-code"></canvas>\n',
+            '  <script src="http://liriansu.com/static/js/qr.min.js"></script>\n',
+            '  <script>\n',
+            '    qr.canvas({\n',
+            '      canvas: document.getElementById("qr-code"),\n',
+            '      level : "H",\n',
+            '      size  : 8,\n',
+            '      value : %s\n' % url,
+            '    });\n',
+            '    document.getElementById("qr-url").innerHTML = %s;\n' % url,
+            '  </script>\n',
+            '</section>\n',
+        ]
 
     def dump_sections(self, title):
         # Add section tag
@@ -10,6 +33,7 @@ class MD:
                 res += ['</section>\n', '<section data-markdown>\n']
             res += [l]
         res += ['</section>\n']
+        res += self.qr
 
         # Remove empty section
         i = len(res) - 1

@@ -14,6 +14,8 @@ def execute(argv=None):
     parser.add_argument('-m', '--theme', help='the reveal.js theme')
     parser.add_argument('-t', '--title', help='the html title')
     parser.add_argument('-o', '--outfile', help='output file name')
+    parser.add_argument('-q', '--qrcode', help='add qrcode as last section', action='store_true')
+    parser.add_argument('-l', '--qrurl',  help='the qrcode url')
     args   = parser.parse_args(argv)
     md     = args.markdown_file
     theme  = args.theme or 'black'
@@ -29,6 +31,8 @@ def execute(argv=None):
         title = args.title or basename(splitext(md)[0])
         out = args.outfile or (title+".html")
         m = MD(md)
+        if args.qrcode:
+            m.set_qr_url(args.qrurl or 'window.location.href')
         r = Reveal(m.dump_sections(title), theme)
         r.generate(out, title)
         print "Finish, you can find it at [{}]".format(out)
