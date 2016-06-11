@@ -27,14 +27,13 @@ def execute(argv=None):
         print md, "is not a file."
         exit(1)
     else:
-        title = args.title or basename(splitext(md)[0])
-        out = args.outfile or (title+".html")
+        out = args.outfile or (basename(splitext(md)[0])+".html")
         print "Generating [{}]".format(out)
         m = MD(md)
         if args.qrcode:
             m.set_qr_url(args.qrurl or 'window.location.href')
         r = Reveal(m.dump_sections(), theme)
-        r.generate(out, title)
+        r.generate(out, args.title or basename(splitext(md)[0]))
         print "Finish, you can find it at [{}]".format(out)
 
 if __name__ == '__main__':
