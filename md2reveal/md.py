@@ -2,7 +2,7 @@ class MD:
     qr = []
 
     def __init__(self, filename):
-        self.lines = open(filename, "r").readlines()
+        self.lines = open(filename, "rb").readlines()
 
     def set_qr_url(self, url):
         if 'http' == url[:4]:
@@ -25,9 +25,9 @@ class MD:
             '</section>\n',
         ]
 
-    def dump_sections(self, title):
+    def dump_sections(self):
         # Add section tag
-        res = ['<section>\n', '  <h1>{}</h1>\n'.format(title), '</section>\n', '<section data-markdown>\n']
+        res = ['<section data-markdown>\n']
         for l in self.lines:
             if self.head(l) > 0:
                 res += ['</section>\n', '<section data-markdown>\n']
@@ -48,7 +48,7 @@ class MD:
             head = self.head(res[i])
             if (head == 1 and start > -1) or (head == 2 and indent > 2):
                 indents += [[start, i-1]]
-            if head >= 0:
+            if head > 0:
                 indent = head
             if head == 1:
                 start = -1
