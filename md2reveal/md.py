@@ -33,7 +33,6 @@ class MD:
                 res += ['</section>\n', '<section data-markdown>\n']
             res += [l]
         res += ['</section>\n']
-        res += self.qr
 
         # Remove empty section
         i = len(res) - 1
@@ -55,11 +54,17 @@ class MD:
                 start = -1
             elif head == 2 or (head == 3 and start == -1):
                 start = i-1
+        if start > 0:
+            indents += [[start, len(res)]]
 
         for i in reversed(indents):
             for j in range(i[0], i[1]):
                 res[j] = "  " + res[j]
             res = res[:i[0]] + ["<section>\n"] + res[i[0]:i[1]] + ["</section>\n"] + res[i[1]:]
+
+        # Add qr code section
+        res += self.qr
+
         return res
 
     def head(self, line):
