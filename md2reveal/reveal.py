@@ -1,11 +1,14 @@
-from os.path import basename, dirname, join, splitext
+# -*- coding: utf-8 -*-
+from __future__ import absolute_import, unicode_literals
+
+from os.path import dirname, join
+
 
 class Reveal:
     def __init__(self, lines, theme):
-        lines = map(lambda l: "        " + l if l.strip() else "\n", lines)
-        section = "\n" + str.join('', lines)
-        self.html = open(join(dirname(__file__), "template.html"),
-                'rb').read().replace("---theme---", theme).replace("---section---", section)
+        lines = map(lambda l: '        ' + l if l.strip() else '\n', lines)
+        self.html = open(join(dirname(__file__), 'template.html'), 'rb').read().replace(
+            '---theme---', theme).replace('---section---', '\n{}'.format(''.join(lines)))
 
     def generate(self, filename, title):
-        open(filename, "wb").write(self.html.replace("---title---", title))
+        open(filename, 'wb').write(self.html.replace('---title---', title))

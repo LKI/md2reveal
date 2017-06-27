@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+from __future__ import absolute_import, unicode_literals
+
+
 class MD:
     qr = []
 
@@ -59,8 +63,8 @@ class MD:
 
         for i in reversed(indents):
             for j in range(i[0], i[1]):
-                res[j] = "  " + res[j]
-            res = res[:i[0]] + ["<section>\n"] + res[i[0]:i[1]] + ["</section>\n"] + res[i[1]:]
+                res[j] = '  ' + res[j]
+            res = res[:i[0]] + ['<section>\n'] + res[i[0]:i[1]] + ['</section>\n'] + res[i[1]:]
 
         # Add qr code section
         res += self.qr
