@@ -1,11 +1,12 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
+from __future__ import absolute_import, unicode_literals
 
 from setuptools import setup
-import os.path
 
 setup(
     name='md2reveal',
-    version='1.1.1',
+    version='1.1.2',
     author='Lirian Su',
     author_email='liriansu@gmail.com',
     url='https://github.com/LKI/md2reveal',
@@ -17,5 +18,5 @@ setup(
     },
     packages=['md2reveal'],
     include_package_data=True,
-    package_data={'md2reveal' : ['template.html']}
+    package_data={'md2reveal': ['template.html']}
 )
