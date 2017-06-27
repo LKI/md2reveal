@@ -8,6 +8,7 @@ MANIFEST
 /dist/
 /build/
 /env/
+/.idea/
 
 # Windows
 Thumbs.db
