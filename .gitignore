@@ -5,8 +5,9 @@
 *.pyc
 *egg-info
 MANIFEST
-dist/
-build/
+/dist/
+/build/
+/env/
 
 # Windows
 Thumbs.db
