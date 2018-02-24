@@ -6,7 +6,7 @@ class MD:
     qr = []
 
     def __init__(self, filename):
-        self.lines = open(filename, "rb").readlines()
+        self.lines = open(filename, 'rb').readlines()
 
     def set_qr_url(self, url):
         if 'http' == url[:4]:
@@ -72,6 +72,8 @@ class MD:
         return res
 
     def head(self, line):
+        if isinstance(line, bytes):
+            line = line.decode()
         head, idx = 0, 0
         while line.find('#', idx) > -1:
             head, idx = head + 1, line.find('#', idx) + 1
