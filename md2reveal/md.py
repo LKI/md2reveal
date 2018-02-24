@@ -41,8 +41,8 @@ class MD:
         # Remove empty section
         i = len(res) - 1
         while i >= 0:
-            if res[i] == '<section data-markdown>\n' and res[i+1] == '</section>\n':
-                res = res[:i] + res[i+2:]
+            if res[i] == '<section data-markdown>\n' and res[i + 1] == '</section>\n':
+                res = res[:i] + res[i + 2:]
             else:
                 i -= 1
 
@@ -51,13 +51,13 @@ class MD:
         for i in range(len(res)):
             head = self.head(res[i])
             if (head == 1 and start > -1) or (head == 2 and indent > 2):
-                indents += [[start, i-1]]
+                indents += [[start, i - 1]]
             if head > 0:
                 indent = head
             if head == 1:
                 start = -1
             elif head == 2 or (head == 3 and start == -1):
-                start = i-1
+                start = i - 1
         if start > 0:
             indents += [[start, len(res)]]
 
