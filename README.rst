@@ -6,7 +6,7 @@ This tool converts markdown to reveal.js.
 (Requires no additional syntax)
 
 It will split sections by h1/h2/h3 tags.
-Check demo on http://www.liriansu.com/md2reveal
+Check demo on https://www.liriansu.com/md2reveal
 
 Source code is hosted on https://github.com/LKI/md2reveal
 

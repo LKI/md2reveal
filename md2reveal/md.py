@@ -16,7 +16,7 @@ class MD(object):
             '  <h1>Thank you</h1>\n',
             '  <p>You can find this slide at <div id="qr-url">-</div> or scan this QR code</p>\n',
             '  <canvas id="qr-code"></canvas>\n',
-            '  <script src="http://liriansu.com/static/js/qr.min.js"></script>\n',
+            '  <script src="https://liriansu.com/static/js/qr.min.js"></script>\n',
             '  <script>\n',
             '    qr.canvas({\n',
             '      canvas: document.getElementById("qr-code"),\n',
