@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='md2reveal',
-    version='1.1.5',
+    version='1.2.0',
     author='Lirian Su',
     author_email='liriansu@gmail.com',
     url='https://github.com/LKI/md2reveal',
